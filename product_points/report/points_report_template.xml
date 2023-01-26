@@ -1,0 +1,55 @@
+<odoo>
+
+    <template id="report_points">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="product_points.report_points_document"/>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_points_document">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <div align="center">
+                    <h1>Product Points</h1>
+                </div>
+                <br/>
+                <table class="table table-borderless">
+                    <tr>
+                        <td>Product:</td>
+                        <td>
+                            <span t-field="doc.product_id.name"/>
+                        </td>
+                        <td>Points:</td>
+                        <td>
+                            <span t-field="doc.points"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Start Date:</td>
+                        <td>
+                            <span t-field="doc.start_date"/>
+                        </td>
+                        <td>End Date:</td>
+                        <td>
+                            <span t-field="doc.end_date"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Status:</td>
+                        <td>
+                            <span t-field="doc.state"/>
+                        </td>
+                        <td>Latest Status Update User:</td>
+                        <td>
+                            <span t-field="doc.status_update_user_id.name"/>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </t>
+    </template>
+
+</odoo>
+

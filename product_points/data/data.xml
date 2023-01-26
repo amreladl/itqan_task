@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="end_expired_points" model="ir.cron">
+        <field name="name">End Expired Product Points</field>
+        <field name="model_id" ref="model_product_point"/>
+        <field name="state">code</field>
+        <field name="active" eval="True"/>
+        <field name="code">model.action_end()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+    </record>
+</odoo>
